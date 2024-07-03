@@ -1,4 +1,4 @@
-# HTTP request processing
+# HTTP Request Processing
 
 In this task, you need to implement the `processRequest()` method within the `HttpRequestProcessor` class. You
 will use a very simplified version of HttpClient with mocked logic.
@@ -29,7 +29,7 @@ In essence, an `HttpClient` acts as a messenger, sending requests to and receivi
 your applications to interact with different web services seamlessly.
 </details>
 
-## Use `also` function during the task solution
+## Use `also` Function During the Task Solution
 
 Your goal is to manage HTTP requests efficiently, ensure accurate logging of details, and handle responses using
 Kotlin's `also` scope function. It's crucial to adhere to the specified logging format, as it will be checked by unit
@@ -42,7 +42,7 @@ processing HTTP responses effectively. Strict adherence to the specified logging
 of the assessment criteria in the accompanying unit tests. This ensures functional correctness and compliance with
 expected output formats for automated validation.
 
-## Task description (implementation details)
+## Task Description (Implementation Details)
 
 1. **Method to Implement:**
     - `fun processRequest(url: String): ResponseData`
@@ -69,7 +69,7 @@ expected output formats for automated validation.
           the status code:
             - “Request failed with status: `<STATUS_CODE>`”
 
-## Provided classes
+## Provided Classes
 
 The provided classes in the task serve specific purposes related to making and handling HTTP requests and responses.
 Check the details below if you need more information about them.
