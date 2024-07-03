@@ -54,8 +54,8 @@ expected output formats for automated validation.
 
 3. **Logging with `also`:**
     - Immediately after receiving the response, use the `also` block to log:
-        - “Response Status: `<STATUS_CODE> - <STATUS_TEXT>`”
-        - “Response Content: `<CONTENT>`”
+        - "Response Status: `<STATUS_CODE> - <STATUS_TEXT>`"
+        - "Response Content: `<CONTENT>`"
     - These logs are crucial for passing unit tests that verify the correctness of the implementation based on the
       expected output format.
 
