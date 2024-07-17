@@ -1,34 +1,35 @@
-# HTTP request processing
+# HTTP Request Processing
 
-In this task, you are tasked with implementing the `processRequest` method within the `HttpRequestProcessor` class. You
-are going to use a very simplified version of HttpClient with mocked logic.
+In this task, you need to implement the `processRequest()` method within the `HttpRequestProcessor` class. You
+will use a very simplified version of HttpClient with mocked logic.
 
-If you are not familiar with the client-server architecture, feel free to check details about brief explanation of how
-HttpClient work:
+If you are not familiar with the client-server architecture, feel free to check the details for a brief explanation of how
+HttpClient works:
+
 <details>
 In very simple terms, an `HttpClient` is a tool used in programming to communicate over the internet. 
-It sends requests to and receives responses from a web server using the HTTP protocol, 
+It sends requests to and receives responses from a server using the HTTP protocol, 
 which is the standard way of exchanging information on the web.
 
 Here’s a breakdown of how it typically works:
 
 1. **Sending a Request**: When you want to access information from a server (like a webpage, data from a database, or
    other resources), the `HttpClient` sends a request to the server. This request includes the URL (which specifies the
-   address of the server and the specific page or data you want) and sometimes additional headers or data if needed.
+   server's address and the specific page or data you want) and sometimes additional headers or data if needed.
 
-2. **Receiving a Response**: After the server receives and processes the request, it sends back a response to
+2. **Receiving a Response**: After the server receives and processes the request, it responds to
    the `HttpClient`. This response includes a status code (which tells if the request was successful or not), any data
    requested (like a webpage, image, or other data), and possibly some headers with extra information about the
    response.
 
 3. **Handling the Response**: The `HttpClient` receives this response and processes it according to the needs of the
-   application. For example, it might display data on a webpage, store it in a database, or use it in some other way.
+   application. For example, it might display data on a webpage, store it in a database, or use it in another way.
 
 In essence, an `HttpClient` acts as a messenger, sending requests to and receiving responses from a server, enabling
 your applications to interact with different web services seamlessly.
 </details>
 
-## Use `also` function during the task solution
+## Use `also` Function During the Task Solution
 
 Your goal is to manage HTTP requests efficiently, ensure accurate logging of details, and handle responses using
 Kotlin's `also` scope function. It's crucial to adhere to the specified logging format, as it will be checked by unit
@@ -36,19 +37,19 @@ tests.
 
 ## Goal
 
-Implement the `processRequest` method to accurately utilize the `also` function for logging side-effects while
+Implement the `processRequest()` method to accurately utilize the `also()` function for logging side effects while
 processing HTTP responses effectively. Strict adherence to the specified logging formats is mandatory, as these are part
 of the assessment criteria in the accompanying unit tests. This ensures functional correctness and compliance with
 expected output formats for automated validation.
 
-## Task description (implementation details)
+## Task Description (Implementation Details)
 
 1. **Method to Implement:**
     - `fun processRequest(url: String): ResponseData`
         - This method accepts a URL string as its parameter and should return a `ResponseData` object.
 
 2. **Using the `HttpClient`:**
-    - Send an HTTP request to the provided URL using the `HttpClient`'s `sendRequest(url: String)` method.
+    - Send an HTTP request to the provided URL using the `HttpClient`'s `sendRequest(URL: String)` method.
     - Capture the response in a variable.
 
 3. **Logging with `also`:**
@@ -61,17 +62,17 @@ expected output formats for automated validation.
 4. **Response Handling:**
     - If the `statusCode` in the response is 200:
         - Use the `also` block again to log:
-            - "Processing content: `<CONTENT>`"
-        - Return a `ResponseData` object with "Success" as the status and the actual content of the response.
+            - “Processing content: `<CONTENT>`”
+        - Return a `ResponseData` object with “Success” as the status and the actual content of the response.
     - If the `statusCode` is not 200:
-        - Return a `ResponseData` object with "Failure" as the status and a message indicating the failure along with
+        - Return a `ResponseData` object with “Failure” as the status and a message indicating the failure along with
           the status code:
-            - "Request failed with status: `<STATUS_CODE>`"
+            - “Request failed with status: `<STATUS_CODE>`”
 
-## Provided classes
+## Provided Classes
 
 The provided classes in the task serve specific purposes related to making and handling HTTP requests and responses.
-Check details below if you need more information about them.
+Check the details below if you need more information about them.
 
 <details>
 Here's a brief overview of each:
@@ -81,14 +82,14 @@ Here's a brief overview of each:
       method, `sendRequest(url: String): HttpResponse`, which is intended to send an HTTP request to the specified URL
       and return an HTTP response.
     - **Functionality**: It acts as a contract for any class that implements it, ensuring they provide a specific
-      implementation of the `sendRequest` method.
+      implementation of the `sendRequest()` method.
 
 2. **`SimpleHttpClient` Class:**
-    - **Purpose**: This class is an implementation of the `HttpClient` interface. It simulates the behavior of an HTTP
-      client by providing a mock implementation of the `sendRequest` method.
-    - **Functionality**: When the `sendRequest` method is called, it prints a message indicating the URL to which a
+    - **Purpose**: This class implements the `HttpClient` interface. It simulates the behavior of an HTTP
+      client by providing a mock implementation of the `sendRequest()` method.
+    - **Functionality**: When the `sendRequest()` method is called, it prints a message indicating the URL to which a
       request is being sent and returns a simulated `HttpResponse` object with hardcoded values (status code 200, status
-      text "Success", and a generic response content). This is useful for testing without needing to connect to an
+      text “Success”, and a generic response content). This is useful for testing without needing to connect to an
       actual external server.
 
 3. **`HttpResponse` Data Class:**
@@ -99,8 +100,8 @@ Here's a brief overview of each:
 
 4. **`ResponseData` Data Class:**
     - **Purpose**: This class is used to format the final output of processing an HTTP request.
-    - **Functionality**: It contains two properties: `status`, which indicates the outcome of the request (like "
-      Success" or "Failure"), and `contentSummary`, which provides a summary or the actual content of the response. This
+    - **Functionality**: It contains two properties: `status`, which indicates the outcome of the request (like “
+      Success” or “Failure”), and `contentSummary`, which provides a summary or the actual content of the response. This
       class is useful for encapsulating the result of an HTTP request in a structured form that is easy to log or
       display.
 
