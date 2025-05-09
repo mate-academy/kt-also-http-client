@@ -1,6 +1,6 @@
 package mate.academy
 
-private const val OK_STATUS_CODE = 200
+internal const val OK_STATUS_CODE = 200
 
 class SimpleHttpClient : HttpClient {
     override fun sendRequest(url: String): HttpResponse {
