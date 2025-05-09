@@ -4,8 +4,6 @@ package mate.academy
 fun main() {
     val client = SimpleHttpClient()
     val processor = HttpRequestProcessor(client)
-
     val responseData = processor.processRequest("https://api.example.com/data")
-
     println("Response Data: ${responseData.status} - ${responseData.contentSummary}")
 }
