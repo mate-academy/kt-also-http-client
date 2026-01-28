@@ -14,7 +14,8 @@ class HttpRequestProcessor(private val client: HttpClient) {
                 ResponseData("Success", it.content)
             }
         } else {
-            ResponseData("Failure", "Request failed with status: ${response.statusCode}")
+            ResponseData("Failure", "Request failed with status: " +
+                    "${response.statusCode}")
         }
     }
 }
