@@ -8,3 +8,4 @@ class SimpleHttpClient : HttpClient {
         return HttpResponse(OK_STATUS_CODE, "Success", "Mock response content")
     }
 }
+
