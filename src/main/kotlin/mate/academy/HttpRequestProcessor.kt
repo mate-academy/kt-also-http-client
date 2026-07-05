@@ -1,7 +1,20 @@
 package mate.academy
 
 class HttpRequestProcessor(private val client: HttpClient) {
+
     fun processRequest(url: String): ResponseData {
-        // TODO: implement
+        val response = client.sendRequest(url).also { res ->
+            println("Response Status: ${res.statusCode} - ${res.statusText}")
+            println("Response Content: ${res.content}")
+        }
+
+        return if (response.statusCode == 200) {
+            response.also { res ->
+                println("Processing content: ${res.content}")
+            }
+            ResponseData(status = "Success", contentSummary = response.content)
+        } else {
+            ResponseData(status = "Failure", contentSummary = "Request failed with status: ${response.statusCode}")
+        }
     }
 }
