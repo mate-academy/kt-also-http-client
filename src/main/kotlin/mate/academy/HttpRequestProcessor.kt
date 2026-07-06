@@ -1,5 +1,6 @@
 package mate.academy
 
+const val HTTP_OK = 200
 class HttpRequestProcessor(private val client: HttpClient) {
 
     fun processRequest(url: String): ResponseData {
@@ -8,7 +9,7 @@ class HttpRequestProcessor(private val client: HttpClient) {
             println("Response Content: ${res.content}")
         }
 
-        return if (response.statusCode == 200) {
+        return if (response.statusCode == HTTP_OK) {
             response.also { res ->
                 println("Processing content: ${res.content}")
             }
