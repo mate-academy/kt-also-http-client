@@ -5,3 +5,4 @@ data class HttpResponse(
     val statusText: String,
     val content: String
 )
+
